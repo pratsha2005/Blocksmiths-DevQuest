@@ -1,11 +1,13 @@
 import { useNavigate } from "react-router-dom";
 import React, { useState } from "react";
+import { supabase } from "../supabaseClient";
 
 export default function DoctorLogin() {
   const navigate = useNavigate();
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+
   const handleLogin = async (e) => {
     e.preventDefault();
 
@@ -22,15 +24,15 @@ export default function DoctorLogin() {
 
       // Retrieve user data (e.g., walletAddress) from the database
       const { data: userData, error: fetchError } = await supabase
-        .from("doctors") // Replace "patients" with your table name
-        .select("aadhaarNo,firstName, walletAddress") // Specify the columns you want to retrieve
-        .eq("email", email) // Match the email with the logged-in user's email
-        .single(); // Retrieve only one record
+        .from("doctors")
+        .select("aadhaarNo,firstName,walletAddress")
+        .eq("email", email)
+        .single();
 
       if (fetchError) throw fetchError;
 
       // Navigate to the dashboard with retrieved data
-      navigate("/doctors/dashboard", {
+      navigate("/doctor/dashboard", {
         state: {
           name: userData.firstName,
           walletAddress: userData.walletAddress,
@@ -57,7 +59,7 @@ export default function DoctorLogin() {
         </div>
 
         <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
-          <form action="#" method="POST" className="space-y-6">
+          <form onSubmit={handleLogin} className="space-y-6">
             <div>
               <label
                 htmlFor="email"
@@ -70,6 +72,8 @@ export default function DoctorLogin() {
                   id="email"
                   name="email"
                   type="email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
                   required
                   autoComplete="email"
                   className="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"
@@ -99,6 +103,8 @@ export default function DoctorLogin() {
                   id="password"
                   name="password"
                   type="password"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
                   required
                   autoComplete="current-password"
                   className="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"
@@ -108,9 +114,6 @@ export default function DoctorLogin() {
 
             <div>
               <button
-                onClick={() => {
-                  handleLogin;
-                }}
                 type="submit"
                 className="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm/6 font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
               >
