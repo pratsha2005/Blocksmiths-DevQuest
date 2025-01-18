@@ -1,36 +1,47 @@
+import { useTranslation } from "react-i18next";
+
 const Footer = () => {
+  const {t} = useTranslation()
   return (
-    <footer className="bg-white shadow dark:bg-gray-800">
-      <div className="w-full mx-auto max-w-screen-xl p-8 md:flex md:items-center md:justify-between">
-        <span className="text-sm text-gray-500 sm:text-center dark:text-gray-400">
-          © 2023{' '}
-          <a href="https://flowbite.com/" className="hover:underline">
-            Flowbite™
-          </a>
-          . All Rights Reserved.
-        </span>
-        <ul className="flex flex-wrap items-center mt-3 text-sm font-medium text-gray-500 dark:text-gray-400 sm:mt-0">
-          <li>
-            <a href="#" className="hover:underline me-4 md:me-6">
-              About
+    <footer className="bg-slate-900 text-gray-300">
+      <div className="w-full mx-auto max-w-screen-xl px-8 py-12">
+        <div className="flex flex-col md:flex-row md:items-center md:justify-between space-y-6 md:space-y-0">
+          {/* Left side with logo and copyright */}
+          <div className="flex items-center space-x-2">
+            {/* Simple logo placeholder */}
+            <div className="w-8 h-8 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-lg"></div>
+            <div className="flex flex-col">
+              <span className="font-bold text-white">Company</span>
+              <span className="text-xs text-gray-400">© 2023 All rights reserved</span>
+            </div>
+          </div>
+
+          {/* Navigation links */}
+          <nav className="flex flex-wrap gap-x-8 gap-y-4 items-center text-sm font-medium">
+            <a href="#" className="relative group">
+              <span className="hover:text-white transition-colors duration-300">About</span>
+              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-purple-500 group-hover:w-full transition-all duration-300"></span>
             </a>
-          </li>
-          <li>
-            <a href="#" className="hover:underline me-4 md:me-6">
-              Privacy Policy
+            <a href="#" className="relative group">
+              <span className="hover:text-white transition-colors duration-300">Services</span>
+              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-purple-500 group-hover:w-full transition-all duration-300"></span>
             </a>
-          </li>
-          <li>
-            <a href="#" className="hover:underline me-4 md:me-6">
-              Licensing
+            <a href="#" className="relative group">
+              <span className="hover:text-white transition-colors duration-300">Blog</span>
+              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-purple-500 group-hover:w-full transition-all duration-300"></span>
             </a>
-          </li>
-          <li>
-            <a href="#" className="hover:underline">
-              Contact
+            <a href="#" className="relative group">
+              <span className="hover:text-white transition-colors duration-300">Contact</span>
+              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-purple-500 group-hover:w-full transition-all duration-300"></span>
             </a>
-          </li>
-        </ul>
+            <a href="#" 
+              className="px-4 py-2 bg-gradient-to-r from-indigo-500 to-purple-500 text-white rounded-lg 
+                         hover:from-indigo-600 hover:to-purple-600 transition-all duration-300 shadow-lg 
+                         hover:shadow-indigo-500/25">
+              Get Started
+            </a>
+          </nav>
+        </div>
       </div>
     </footer>
   );
