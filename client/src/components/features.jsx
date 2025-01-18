@@ -93,9 +93,7 @@ export default function Features() {
          <div className="px-8 pb-3 pt-8 sm:px-10 sm:pb-0 sm:pt-10">
           <h1 className="mt-2 text-lg font-medium tracking-tight text-gray-950 max-lg:text-center">{t('card.subtitle4')}</h1>
            <p className="mt-2 max-w-lg text-sm/6 text-gray-600 max-lg:text-center">
-           <p>{t('card.desc4')}</p>
-        
-      </p>
+           {t('card.desc4')}</p>
     </div>
     
     

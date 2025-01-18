@@ -6,8 +6,6 @@ const LabReport = () => {
     diagnosis: "",
     medication: "",
     dosage: "",
-    treatmentNotes: "",
-    notes: "",
     attachment: null,
   });
 
@@ -89,22 +87,6 @@ const LabReport = () => {
             value={formData.dosage}
             onChange={handleChange}
             className="w-full p-2 border rounded-md focus:ring focus:ring-blue-200"
-            required
-          />
-        </div>
-
-        {/* Treatment Notes */}
-        <div>
-          <label htmlFor="treatmentNotes" className="block font-medium mb-2">
-            Treatment Notes
-          </label>
-          <textarea
-            id="treatmentNotes"
-            name="treatmentNotes"
-            value={formData.treatmentNotes}
-            onChange={handleChange}
-            className="w-full p-2 border rounded-md focus:ring focus:ring-blue-200"
-            rows="4"
             required
           />
         </div>

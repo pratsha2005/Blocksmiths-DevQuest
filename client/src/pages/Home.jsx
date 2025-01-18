@@ -6,7 +6,7 @@ import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 import Navbar from '../components/Navbar'
 import Hero from '../components/hero'
 import Features from '../components/features'
-import Team from '../components/team'
+import AboutUs from '../components/About'
 import Footer from '../components/footer'
 
 const navigation = [
@@ -24,7 +24,10 @@ export default function Home() {
     <Navbar/>
     <Hero/>
     <Features/>
-    <Team/>
+    <div id='about'>
+      <AboutUs/>
+    </div>
+    
     <Footer/>
 </>
   )
