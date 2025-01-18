@@ -8,7 +8,7 @@ function Notifications() {
                 <Card/>
             ) : (
                 <h1>
-                    No Patients Found
+                    No new notifications
                 </h1>
             )}
         </>

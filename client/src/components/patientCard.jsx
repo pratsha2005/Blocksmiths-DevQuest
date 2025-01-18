@@ -15,7 +15,7 @@ function PatientCard({ patients, onClick }) {
             >
               <img
                 alt="Patient"
-                src="https://via.placeholder.com/150"  // Placeholder image for patient
+                src="https://img.favpng.com/8/18/20/computer-icons-user-profile-clip-art-png-favpng-AEn2Lu7vbd1dvVU3EG8uk8d1N_t.jpg"  // Placeholder image for patient
                 className="aspect-square w-full rounded-md bg-gray-200 object-cover group-hover:opacity-75 lg:aspect-auto lg:h-80"
               />
               <div className="mt-4 flex justify-between">

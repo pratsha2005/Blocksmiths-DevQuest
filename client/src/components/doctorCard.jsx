@@ -9,7 +9,7 @@ function DoctorCard({ doctors, onClick, onRemoveAccess }) {
             <div key={index} className="group relative">
               <img
                 alt="Doctor"
-                src="https://via.placeholder.com/150" // Placeholder image for doctor
+                src="https://thumbs.dreamstime.com/b/male-doctor-nurse-ners-avatar-clipart-icon-logo-animated-cartoon-vector-flat-design-men-occupation-paramedic-illustration-269804308.jpg" // Placeholder image for doctor
                 className="aspect-square w-full rounded-md bg-gray-200 object-cover group-hover:opacity-75 lg:aspect-auto lg:h-80"
               />
               <div className="mt-4 flex justify-between">
