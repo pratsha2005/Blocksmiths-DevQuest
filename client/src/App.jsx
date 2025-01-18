@@ -8,7 +8,14 @@ import SignInOptions from './pages/SignInOption.jsx';
 import Home from './pages/Home.jsx'
 import LabReport from './components/LabReport.jsx';
 import DoctorDashboard from './pages/DoctorDashboard.jsx';
+import { createClient } from '@supabase/supabase-js'
+const supabase = createClient(import.meta.env.SUPABASE_URL,import.meta.env.SUPABASE_KEY)
+
+const ff ="fejfiefieh";
 function AppContent(){
+  
+  const supabase = createClient("https://wisnpsaotnokckvuepeq.supabase.co", "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Indpc25wc2FvdG5va2NrdnVlcGVxIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MzcxOTkxMTQsImV4cCI6MjA1Mjc3NTExNH0.sdYO0yT1aJp1MTr87ncGnyLKl_8Q0Rs4Nj6xsllN3og");
+
   return(
     <Routes>
       
