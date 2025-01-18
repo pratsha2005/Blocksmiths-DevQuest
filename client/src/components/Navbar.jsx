@@ -1,10 +1,10 @@
 import { Disclosure, DisclosureButton, DisclosurePanel, Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/react'
 import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline'
-
-
+import { Link, NavLink } from 'react-router-dom'
+import {useTranslation} from 'react-i18next'
 const navigation = [
-  { name: 'Dashboard', href: '#', current: true },
-  { name: 'About', href: '#', current: false },
+  { name: 'Dashboard', href: 'dashboard', current: true },
+  { name: 'About', href: 'about', current: false },
   { name: 'Services', href: '#', current: false },
   { name: 'Contact', href: '#', current: false },
 ]
@@ -14,6 +14,7 @@ function classNames(...classes) {
 }
 
 export default function Navbar() {
+  const {t} = useTranslation() 
   return (
     <Disclosure as="nav" className="bg-gray-800 sticky top-0 z-50">
       <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
@@ -29,11 +30,12 @@ export default function Navbar() {
           </div>
           <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
             <div className="flex shrink-0 items-center">
-              <img
+              <a href="/"><img
                 alt="Your Company"
                 src="https://tailwindui.com/plus/img/logos/mark.svg?color=indigo&shade=500"
                 className="h-8 w-auto"
               />
+              </a>
             </div>
             <div className="hidden sm:ml-6 sm:block">
               <div className="flex space-x-4 font-open-sans ">
@@ -47,7 +49,7 @@ export default function Navbar() {
                       'rounded-md px-3 py-2 text-sm font-medium',
                     )}
                   >
-                    {item.name}
+                    {t(`navbar.${item.name}`)}
                   </a>
                 ))}
               </div>
