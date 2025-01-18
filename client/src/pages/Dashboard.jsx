@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
-import Sidebar from '../components/Sidebar';
-import Navbar from '../components/Navbar';
-import DashboardContent from '../components/DashboardContent';
-
+// Dashboard component
+import React,{useState} from "react";
+import Sidebar from '../components/sidebar'
+import Navbar from "../components/Navbar";
+import DashboardContent from '../components/dashboardContent'
 const Dashboard = () => {
-  const [selectedOption, setSelectedOption] = useState('Home'); // Default option
+  const [selectedOption, setSelectedOption] = useState('patients'); // Default to 'patients'
 
   const handleOptionSelect = (option) => {
     setSelectedOption(option);
@@ -12,7 +12,7 @@ const Dashboard = () => {
 
   return (
     <div className="flex h-screen">
-      <Sidebar onOptionSelect={handleOptionSelect} />
+      <Sidebar onSelect={handleOptionSelect} />
       <div className="flex-1 flex flex-col">
         <Navbar />
         <div className="flex-1 overflow-y-auto bg-gray-50">
