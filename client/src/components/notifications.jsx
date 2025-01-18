@@ -1,11 +1,9 @@
 import React, { useState } from 'react'
-import SearchBar from './searchBar'
 import Card from './card'
-function RequestAccess() {
+function Notifications() {
     const [user, setUser] = useState(true)
     return(
         <>
-            <SearchBar/>
             {!user ? (
                 <Card/>
             ) : (
@@ -17,5 +15,5 @@ function RequestAccess() {
     )
 }
 
-export default RequestAccess
+export default Notifications
 

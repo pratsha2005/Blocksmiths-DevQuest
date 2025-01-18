@@ -1,6 +1,9 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const SignInOptions = () => {
+  const navigate = useNavigate();
+
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-100">
       <div className="text-center">
@@ -11,7 +14,7 @@ const SignInOptions = () => {
           {/* Patient Box */}
           <div
             className="p-6 bg-white shadow-lg rounded-lg border transition cursor-pointer hover:bg-blue-500 hover:text-white hover:shadow-xl"
-            onClick={() => alert('Sign in as Patient')}
+            onClick={() => navigate('/patient/login')}
           >
             <h2 className="text-xl font-semibold">Patient</h2>
             <p className="mt-2">
@@ -21,7 +24,7 @@ const SignInOptions = () => {
           {/* Doctor Box */}
           <div
             className="p-6 bg-white shadow-lg rounded-lg border transition cursor-pointer hover:bg-blue-500 hover:text-white hover:shadow-xl"
-            onClick={() => alert('Sign in as Doctor')}
+            onClick={() => navigate('/doctor/login')}
           >
             <h2 className="text-xl font-semibold">Doctor</h2>
             <p className="mt-2">

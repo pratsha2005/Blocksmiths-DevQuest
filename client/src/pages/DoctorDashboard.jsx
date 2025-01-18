@@ -1,9 +1,9 @@
 // Dashboard component
 import React,{useState} from "react";
-import Sidebar from '../components/sidebar'
+import DoctorSidebar from '../components/doctorSidebar'
 import Navbar from "../components/Navbar";
-import DashboardContent from '../components/doctorDashboardContent'
-const Dashboard = () => {
+import DoctorDashboardContent from '../components/doctorDashboardContent'
+const DoctorDashboard = () => {
   const [selectedOption, setSelectedOption] = useState('patients'); // Default to 'patients'
 
   const handleOptionSelect = (option) => {
@@ -12,15 +12,15 @@ const Dashboard = () => {
 
   return (
     <div className="flex h-screen">
-      <Sidebar onSelect={handleOptionSelect} />
+      <DoctorSidebar onSelect={handleOptionSelect} />
       <div className="flex-1 flex flex-col">
         <Navbar />
         <div className="flex-1 overflow-y-auto bg-gray-50">
-          <DashboardContent selectedOption={selectedOption} />
+          <DoctorDashboardContent selectedOption={selectedOption} />
         </div>
       </div>
     </div>
   );
 };
 
-export default Dashboard;
+export default DoctorDashboard;
