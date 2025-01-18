@@ -28,11 +28,9 @@ Reduces the risk of data breaches compared to centralized systems.
 
 Every access or modification is logged on the blockchain, providing a complete and tamper-proof audit trail.
 
-### Interoperability:
+### Multilingual Interface:
 
-Supports integration with existing healthcare systems and standards.
-
-Ensures compatibility across multiple providers and regions.
+Integrating multiple groups of people using multiple language user interface.
 
 ## Technologies Used
 
@@ -61,8 +59,8 @@ Access to a blockchain network (e.g., Ethereum, Polygon, or a private blockchain
 ### Clone the repository:
 
 ##
-    git clone https://github.com/username/decentralized-medical-history.git
-cd decentralized-medical-history
+    git clone https://github.com/pratsha2005/Blocksmiths-DevQuest.git
+cd Blocksmiths-DevQuest
 
 ### Install dependencies:
 
@@ -92,7 +90,7 @@ cd decentralized-medical-history
 
 Register: Create an account and set up your decentralized wallet.
 
-Upload Records: Add medical records to your wallet securely.
+Keep your records safe: Track your medical history and see who can edit it .
 
 Grant Access: Share specific records with doctors by setting permissions.
 
