@@ -6,7 +6,14 @@ const Sidebar = ({ onSelect }) => {
         Dashboard
       </div>
       <nav className="flex-1 p-4">
+
         <ul className="space-y-4">
+        <li
+            className="hover:bg-gray-700 p-2 rounded cursor-pointer"
+            onClick={() => onSelect('patients')}
+          >
+            My Profile
+          </li>
           <li
             className="hover:bg-gray-700 p-2 rounded cursor-pointer"
             onClick={() => onSelect('patients')}
