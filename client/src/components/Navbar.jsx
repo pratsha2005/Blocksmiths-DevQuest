@@ -2,6 +2,7 @@ import { Disclosure, DisclosureButton, DisclosurePanel, Menu, MenuButton, MenuIt
 import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline'
 import { Link, NavLink } from 'react-router-dom'
 import {useTranslation} from 'react-i18next'
+import {LanguageDropdown} from './LanguageDropdown'
 import '../services/i18n'
 const navigation = [
   { name: 'Dashboard', href: 'dashboard', current: true },
@@ -66,7 +67,8 @@ export default function Navbar() {
               <BellIcon aria-hidden="true" className="size-6" />
             </button>
 
-            {/* Profile dropdown */}
+            {/* Profile dropsdown */}
+            <LanguageDropdown/>
             <Menu as="div" className="relative ml-3">
               <div>
                 <MenuButton className="relative flex rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
