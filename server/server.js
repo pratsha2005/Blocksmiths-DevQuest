@@ -1,41 +1,37 @@
 const express = require('express');
-const connectDB = require('./connectDB');
-const Patient = require('./models/Patient');
+const cors = require('cors');
+const helmet = require('helmet');
+const morgan = require('morgan');
+const dotenv = require('dotenv');
+const connectDB = require('./config/db');
+const patientRoutes = require('./routes/patientRoutes');
 
-require('dotenv').config();
+// Load environment variables
+dotenv.config();
 
+// Initialize express app
 const app = express();
 
-app.use(express.json());
+// Connect to MongoDB
 connectDB();
 
-app.get('/', (req, res) => {
-  res.send('API is running...');
+// Middleware
+app.use(helmet());
+app.use(cors());
+app.use(morgan('dev'));
+app.use(express.json());
+
+// Routes
+app.use('/api', patientRoutes);
+
+// Error handling middleware
+app.use((err, req, res, next) => {
+  console.error(err.stack);
+  res.status(500).json({ error: 'Something went wrong!' });
 });
 
-//Create a New Patient
-app.post('/api/patients/create', async (req, res) => {
-  try {
-    const patient = new Patient(req.body);
-    const savedPatient = await patient.save();
-    res.status(201).json(savedPatient);
-  } catch (err) {
-    console.error(err.message);
-    res.status(500).json({ error: 'Failed to create patient record.' });
-  }
+// Start server
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
 });
-
-//Fetch All Patients
-app.get('/api/patients/all', async (req, res) => {
-  try {
-    const patients = await Patient.find();
-    res.status(200).json(patients);
-  } catch (err) {
-    console.error(err.message);
-    res.status(500).json({ error: 'Failed to fetch patients.' });
-  }
-});
-
-//Server
-const PORT = process.env.PORT || 8000;
-app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
