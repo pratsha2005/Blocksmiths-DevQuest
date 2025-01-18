@@ -6,7 +6,7 @@ function RequestAccess() {
     return(
         <>
             <SearchBar/>
-            {user ? (
+            {!user ? (
                 <Card/>
             ) : (
                 <h1>
