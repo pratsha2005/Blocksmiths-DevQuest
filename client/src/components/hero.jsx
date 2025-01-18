@@ -1,7 +1,8 @@
 import React from 'react'
 import {useTranslation} from 'react-i18next'
+import '../services/i18n'
 function Hero() {
-  const {t} = useTranslation()
+  const {t, i18n} = useTranslation()
   return (
     <section className="bg-white dark:bg-gray-900 mb-0">
     <div className="grid max-w-screen-xl px-4 py-8 mx-auto lg:gap-8 xl:gap-0 lg:py-16 lg:grid-cols-12 mt-0">

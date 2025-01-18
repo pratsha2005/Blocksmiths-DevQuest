@@ -2,6 +2,7 @@ import { Disclosure, DisclosureButton, DisclosurePanel, Menu, MenuButton, MenuIt
 import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline'
 import { Link, NavLink } from 'react-router-dom'
 import {useTranslation} from 'react-i18next'
+import '../services/i18n'
 const navigation = [
   { name: 'Dashboard', href: 'dashboard', current: true },
   { name: 'About', href: 'about', current: false },
@@ -14,7 +15,7 @@ function classNames(...classes) {
 }
 
 export default function Navbar() {
-  const {t} = useTranslation() 
+  const {t, i18n} = useTranslation() 
   return (
     <Disclosure as="nav" className="bg-gray-800 sticky top-0 z-50">
       <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
