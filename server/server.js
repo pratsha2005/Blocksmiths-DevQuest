@@ -1,37 +1,31 @@
-const express = require('express');
-const cors = require('cors');
-const helmet = require('helmet');
-const morgan = require('morgan');
-const dotenv = require('dotenv');
-const connectDB = require('./config/db');
-const patientRoutes = require('./routes/patientRoutes');
+require("dotenv").config();
+const express = require("express");
+const colors = require("colors"); // For colorful console logs
+const connectDB = require("./config/db");
 
-// Load environment variables
-dotenv.config();
+const userRoutes = require("./routes/userRoutes");
+const recordRoutes = require("./routes/recordRoutes");
+const accessRoutes = require("./routes/accessRoutes");
 
-// Initialize express app
 const app = express();
+
+// Middleware
+app.use(express.json());
 
 // Connect to MongoDB
 connectDB();
 
-// Middleware
-app.use(helmet());
-app.use(cors());
-app.use(morgan('dev'));
-app.use(express.json());
-
 // Routes
-app.use('/api', patientRoutes);
+app.use("/api/users", userRoutes);
+app.use("/api/records", recordRoutes);
+app.use("/api/access", accessRoutes);
 
-// Error handling middleware
+// Error Handling Middleware
 app.use((err, req, res, next) => {
   console.error(err.stack);
-  res.status(500).json({ error: 'Something went wrong!' });
+  res.status(500).json({ message: "Internal Server Error" });
 });
 
-// Start server
-const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
-});
+// Start Server
+const PORT = process.env.PORT || 5000;
+app.listen(PORT, () => console.log(`Server running on port ${PORT}`.yellow.bold));
