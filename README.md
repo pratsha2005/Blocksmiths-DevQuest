@@ -44,6 +44,8 @@ Ensures compatibility across multiple providers and regions.
 
 ### Cryptography: Ensures secure data access and sharing.
 
+### React.js: Creates robust frontend using javascript environment
+
 ## Installation and Setup
 
 ### Prerequisites
