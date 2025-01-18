@@ -12,7 +12,7 @@ const Footer = () => {
             <img src="https://media.istockphoto.com/id/1191123358/vector/herbal-medicine-concept.jpg?s=612x612&w=0&k=20&c=eIze2uz2AQ7AkhQwZTajshpc5od-1cQoFBRTlgCtoww=" alt="health suraksha " className="w-auto h-8" />
             
             <div className="flex flex-col">
-              <span className="font-bold text-white">Health Suraksha</span>
+              <span className="font-bold text-white">HealthSuraksha</span>
               <span className="text-xs text-gray-400">© 2023 All rights reserved</span>
             </div>
           </div>
