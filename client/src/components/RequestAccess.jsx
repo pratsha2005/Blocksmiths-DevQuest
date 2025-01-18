@@ -1,11 +1,12 @@
 import React from 'react'
-
+import SearchBar from './searchBar'
 function RequestAccess() {
   return (
     <div>
-      request access
+        <SearchBar/>
     </div>
   )
 }
 
 export default RequestAccess
+
