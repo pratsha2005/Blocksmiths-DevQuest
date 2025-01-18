@@ -1,11 +1,11 @@
 import React from 'react'
 
-function patients() {
+function Patients() {
   return (
     <div>
-      
+      hello
     </div>
   )
 }
 
-export default patients
+export default Patients
