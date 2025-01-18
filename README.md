@@ -58,7 +58,8 @@ Access to a blockchain network (e.g., Ethereum, Polygon, or a private blockchain
 
 ### Clone the repository:
 
-git clone https://github.com/username/decentralized-medical-history.git
+##
+    git clone https://github.com/username/decentralized-medical-history.git
 cd decentralized-medical-history
 
 ### Install dependencies:
