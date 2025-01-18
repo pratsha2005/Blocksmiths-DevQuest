@@ -60,7 +60,8 @@ Access to a blockchain network (e.g., Ethereum, Polygon, or a private blockchain
 
 ##
     git clone https://github.com/pratsha2005/Blocksmiths-DevQuest.git
-cd Blocksmiths-DevQuest
+##
+        cd Blocksmiths-DevQuest
 
 ### Install dependencies:
 
