@@ -6,7 +6,7 @@ import {LanguageDropdown} from './LanguageDropdown'
 import '../services/i18n'
 const navigation = [
   { name: 'Dashboard', href: 'dashboard', current: true },
-  { name: 'About', href: 'about', current: false },
+  { name: 'About', href: '#about', current: false },
   { name: 'Services', href: '#', current: false },
   { name: 'Contact', href: '#', current: false },
 ]

@@ -1,5 +1,5 @@
 import React from 'react';
-
+import { Link } from 'react-router-dom';
 function PatientCard({ patients, onClick }) {
   console.log('Patients data:', patients); 
 
@@ -29,6 +29,11 @@ function PatientCard({ patients, onClick }) {
                   <p className="mt-1 text-sm text-gray-500">Phone: {patient.contact.phone}</p>
                   <p className="mt-1 text-sm text-gray-500">Address: {patient.contact.address.street}, {patient.contact.address.city}, {patient.contact.address.state}, {patient.contact.address.zip}</p>
                   <p className="mt-1 text-sm text-gray-500">Emergency Contact: {patient.emergencyContact.name} ({patient.emergencyContact.relationship})</p>
+                  <Link to = '/addForm'>
+                    <button className="px-6 py-3 bg-blue-500 text-white rounded-full hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-green-300 font-bold mt-4">
+                      Add Data
+                    </button>
+                  </Link>
                 </div>
               </div>
             </div>

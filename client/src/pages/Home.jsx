@@ -24,7 +24,10 @@ export default function Home() {
     <Navbar/>
     <Hero/>
     <Features/>
-    <AboutUs/>
+    <div id='about'>
+      <AboutUs/>
+    </div>
+    
     <Footer/>
 </>
   )

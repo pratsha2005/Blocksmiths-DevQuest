@@ -29,10 +29,10 @@ const Footer = () => {
             </a>
             
             <a href="#" className="relative group">
-              <span className="hover:text-white transition-colors duration-300">Contact</span>
+              <span className="hover:text-white transition-colors duration-300">Gmail</span>
               <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-purple-500 group-hover:w-full transition-all duration-300"></span>
             </a>
-            <a href="login" 
+            <a href="/signInAs" 
               className="px-4 py-2 bg-gradient-to-r from-indigo-500 to-purple-500 text-white rounded-lg 
                          hover:from-indigo-600 hover:to-purple-600 transition-all duration-300 shadow-lg 
                          hover:shadow-indigo-500/25">

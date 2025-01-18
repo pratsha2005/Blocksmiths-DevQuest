@@ -14,6 +14,7 @@ import SignInOptions from "./pages/SignInOption.jsx";
 import Home from "./pages/Home.jsx";
 import LabReport from "./components/LabReport.jsx";
 import DoctorDashboard from "./pages/DoctorDashboard.jsx";
+import AboutUs from "./components/About.jsx";
 function AppContent() {
   return (
     <Routes>
@@ -26,6 +27,9 @@ function AppContent() {
       <Route path="/doctor/dashboard" element={<DoctorDashboard />} />
       <Route path="/patient/dashboard" element={<PatientDashboard />} />
       <Route path="/labReport" element={<LabReport />} />
+      <Route  path="/about" element={<AboutUs />} />
+      <Route  path="/addForm" element={<LabReport />} />
+
     </Routes>
   );
 }
