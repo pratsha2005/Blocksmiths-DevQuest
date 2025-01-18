@@ -64,21 +64,25 @@ cd decentralized-medical-history
 
 ### Install dependencies:
 
-npm install
+##
+        npm install
 
 ### Configure environment variables:
 
-Create a .env file in the root directory.
+##
+        Create a .env file in the root directory.
 
 ### Define variables for blockchain network configuration and API keys.
 
 ### Deploy smart contracts:
 
-npx hardhat deploy
+##
+        npx hardhat deploy
 
 ### Start the application:
 
-npm start
+##
+        npm start
 
 ## How It Works
 
@@ -124,15 +128,18 @@ Contributions are welcome! Please follow these steps:
 
 ### Create a new branch:
 
-git checkout -b feature-name
+##
+        git checkout -b feature-name
 
 ### Commit your changes:
 
-git commit -m "Description of changes"
+##
+        git commit -m "Description of changes"
 
 ### Push to the branch:
 
-git push origin feature-name
+##
+        git push origin feature-name
 
 ### Submit a pull request.
 
