@@ -1,12 +1,13 @@
 import React, { useState } from 'react'
 import SearchBar from './searchBar'
+import Card from './card'
 function RequestAccess() {
-    const [user, setUser] = useState('')
+    const [user, setUser] = useState(true)
     return(
         <>
             <SearchBar/>
             {user ? (
-                <div>Access Granted</div>
+                <Card/>
             ) : (
                 <h1>
                     No Patients Found
