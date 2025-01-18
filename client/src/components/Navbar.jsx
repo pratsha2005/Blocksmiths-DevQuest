@@ -34,7 +34,7 @@ export default function Navbar() {
             <div className="flex shrink-0 items-center">
             <a href="/"> <img
                 alt="health suraksha"
-                src="https://media.istockphoto.com/id/1136478636/vector/medical-cross-icon.jpg?s=612x612&w=0&k=20&c=YFSMnnRLstYTvupo7fgya1yYNSsa_mAe-AsXqwnUU6I="
+                src="https://media.istockphoto.com/id/1191123358/vector/herbal-medicine-concept.jpg?s=612x612&w=0&k=20&c=eIze2uz2AQ7AkhQwZTajshpc5od-1cQoFBRTlgCtoww="
                 className="h-8 w-auto"
               />
               </a>
