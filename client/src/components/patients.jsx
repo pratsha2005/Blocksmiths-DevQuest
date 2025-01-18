@@ -1,9 +1,10 @@
 import React from 'react'
+import SearchBar from './searchBar'
 
 function Patients() {
   return (
     <div>
-      hello
+      <SearchBar />
     </div>
   )
 }
