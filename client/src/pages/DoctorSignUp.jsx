@@ -45,7 +45,7 @@ export default function DoctorSignUp() {
       if (dbError) throw dbError;
 
       alert("Account created successfully!");
-      navigate("/doctors/login");
+      navigate("/doctor/login");
     } catch (err) {
       alert(err.message);
     }

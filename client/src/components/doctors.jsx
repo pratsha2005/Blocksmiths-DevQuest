@@ -1,37 +1,67 @@
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';
-import SearchBar from './searchBar';
+import { supabase } from '../supabaseClient'; // Ensure your Supabase client is correctly configured
 import DoctorCard from './doctorCard';
-import Chatbot from './chatbot'; // Assuming you have the chatbot component
 
 function Doctors() {
   const [doctorsData, setDoctorsData] = useState([]);
-  const [selectedDoctor, setSelectedDoctor] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
   useEffect(() => {
     const fetchDoctorsData = async () => {
       try {
-        const response = await axios.get('https://mocki.io/v1/f6621052-dccd-4638-825a-ada14f5eef75');
-        setDoctorsData(response.data.patients);
+        setLoading(true);
+        const storedId = localStorage.getItem('id'); // Get the stored patient ID from local storage
+        if (!storedId) {
+          throw new Error('Patient ID not found in local storage.');
+        }
+
+        // Fetch doctor IDs common in `doctors` and `requestAccess` where `patientId = storedId`
+        const { data, error: queryError } = await supabase
+          .from('requestAccess')
+          .select('doctorId') 
+          .eq('patientId', storedId);
+
+        if (queryError) {
+          throw queryError;
+        }
+
+        const doctorIds = data.map(item => item.doctorId); // Extract doctorIds
+
+        if (doctorIds.length > 0) {
+          // Fetch doctor details (names) from doctors table based on doctorIds
+          const { data: doctorDetails, error: doctorError } = await supabase
+            .from('doctors')
+            .select('id, firstName, lastName')
+            .in('id', doctorIds); // Fetch doctors by IDs
+
+          if (doctorError) {
+            throw doctorError;
+          }
+
+          setDoctorsData(doctorDetails || []);
+        }
         setLoading(false);
-      } catch {
-        setError('Failed to fetch patient data');
+      } catch (err) {
+        console.error('Error fetching doctors:', err.message);
+        setError('Failed to fetch doctor data.');
         setLoading(false);
       }
     };
+
     fetchDoctorsData();
   }, []);
 
-  if (loading) return <div>Loading patients...</div>;
+  if (loading) return <div>Loading doctors...</div>;
   if (error) return <div>{error}</div>;
 
   return (
     <div>
-          {doctorsData.length > 0 && (
-            <DoctorCard doctors={doctorsData} onClick={setSelectedDoctor} />
-          )}
+      {doctorsData.length > 0 ? (
+        <DoctorCard doctors={doctorsData}/>
+      ) : (
+        <div>No doctors found.</div>
+      )}
     </div>
   );
 }

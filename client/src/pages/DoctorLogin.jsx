@@ -25,11 +25,13 @@ export default function DoctorLogin() {
       // Retrieve user data (e.g., walletAddress) from the database
       const { data: userData, error: fetchError } = await supabase
         .from("doctors")
-        .select("aadhaarNo,firstName,walletAddress")
+        .select("id,aadhaarNo,firstName,walletAddress")
         .eq("email", email)
         .single();
 
       if (fetchError) throw fetchError;
+      localStorage.setItem("id", userData.id);
+
 
       // Navigate to the dashboard with retrieved data
       navigate("/doctor/dashboard", {

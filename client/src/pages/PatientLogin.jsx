@@ -24,11 +24,14 @@ export default function PatientLogin() {
       // Retrieve user data (e.g., walletAddress) from the database
       const { data: userData, error: fetchError } = await supabase
         .from("patients") // Replace "patients" with your table name
-        .select("aadhaarNo,firstName, walletAddress") // Specify the columns you want to retrieve
+        .select("id,aadhaarNo,firstName, walletAddress") // Specify the columns you want to retrieve
         .eq("email", email) // Match the email with the logged-in user's email
         .single(); // Retrieve only one record
 
       if (fetchError) throw fetchError;
+
+      localStorage.setItem("id", userData.id);
+
 
       // Navigate to the dashboard with retrieved data
       navigate("/patient/dashboard", {
