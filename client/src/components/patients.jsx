@@ -3,7 +3,7 @@ import axios from 'axios';  // Importing axios for API calls
 import SearchBar from './searchBar';
 import PatientCard from './patientCard';
 import { PatientRecords } from './patientRecords';
-import DescriptionList from './descriptionList';
+import DescriptionList from './doctorDescriptionList';
 import Chatbot from './chatbot';  // Assuming you have the chatbot component
 
 function Patients() {
