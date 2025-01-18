@@ -1,37 +1,26 @@
-const express = require('express');
-const cors = require('cors');
-const helmet = require('helmet');
-const morgan = require('morgan');
-const dotenv = require('dotenv');
-const connectDB = require('./config/db');
-const patientRoutes = require('./routes/patientRoutes');
+const express = require("express");
+const dotenv = require("dotenv");
+const cors = require("cors");
+const colors = require("colors"); // Add colors package for console styling
+const connectDB = require("./config/db");
 
-// Load environment variables
+// Load env vars
 dotenv.config();
 
-// Initialize express app
+// Connect to database
 const app = express();
 
-// Connect to MongoDB
-connectDB();
-
 // Middleware
-app.use(helmet());
 app.use(cors());
-app.use(morgan('dev'));
 app.use(express.json());
 
 // Routes
-app.use('/api', patientRoutes);
+app.use("/api/users", require("./routes/userRoutes"));
+app.use("/api/records", require("./routes/recordRoutes"));
 
-// Error handling middleware
-app.use((err, req, res, next) => {
-  console.error(err.stack);
-  res.status(500).json({ error: 'Something went wrong!' });
-});
+const PORT = process.env.PORT || 5000;
 
-// Start server
-const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
+// Connect to database before starting server
+connectDB().then(() => {
+  app.listen(PORT, () => console.log(`Server running on port ${PORT}`.yellow.bold));
 });

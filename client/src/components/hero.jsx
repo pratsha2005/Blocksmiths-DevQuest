@@ -11,9 +11,14 @@ function Hero() {
                 Get started
                 <svg className="w-5 h-5 ml-2 -mr-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clipRule="evenodd"></path></svg>
             </a>
-            <a href="#" className="inline-flex items-center justify-center px-5 py-3 text-base font-medium text-center text-gray-900 border border-gray-300 rounded-lg hover:bg-blue-600 focus:ring-4 focus:ring-gray-100 dark:text-white dark:border-gray-700 dark:hover:bg-blue-700 dark:focus:ring-gray-800">
-             Join Us
-            </a> 
+            <a
+  href="#"
+  className="relative inline-flex items-center justify-center px-5 py-3 text-base font-medium text-center text-gray-900 border border-gray-300 rounded-lg hover:bg-blue-600 focus:ring-4 focus:ring-gray-100 dark:text-white dark:border-gray-700 dark:hover:bg-blue-700 dark:focus:ring-gray-800
+  before:absolute before:inset-0 before:rounded-lg before:border-2 before:border-transparent before:transition-all before:duration-300 before:hover:border-blue-600 dark:before:hover:border-blue-700"
+>
+  Join Us
+</a>
+
         </div>
         <div className="hidden lg:mt-0 lg:col-span-5 lg:flex">
             <img src="https://img.freepik.com/free-vector/doctor-examining-patient-illustrated_23-2148847933.jpg?uid=R180094575&ga=GA1.1.1580593228.1717417627&semt=ais_hybrid" alt="homepageimage"/>

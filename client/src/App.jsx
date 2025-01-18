@@ -4,6 +4,7 @@ import SignUp from './pages/SignUp.jsx';
 import Dashboard from './pages/Dashboard.jsx';
 import SignInOptions from './pages/SignInOption.jsx';
 import Home from './pages/Home.jsx'
+import LabReport from './components/LabReport.jsx';
 function AppContent(){
   return(
     <Routes>
@@ -13,6 +14,8 @@ function AppContent(){
       <Route path="/signInAs" element={<SignInOptions />} />
       <Route path="/" element={<Home />} />
       <Route path="/dashboard" element={<Dashboard />} />
+      <Route path="/labReport" element={<LabReport />} />
+
     </Routes>
   );
 }

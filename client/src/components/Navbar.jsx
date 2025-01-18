@@ -1,6 +1,7 @@
 import { Disclosure, DisclosureButton, DisclosurePanel, Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/react'
 import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline'
 
+
 const navigation = [
   { name: 'Dashboard', href: '#', current: true },
   { name: 'About', href: '#', current: false },
@@ -35,7 +36,7 @@ export default function Navbar() {
               />
             </div>
             <div className="hidden sm:ml-6 sm:block">
-              <div className="flex space-x-4">
+              <div className="flex space-x-4 font-open-sans ">
                 {navigation.map((item) => (
                   <a
                     key={item.name}
