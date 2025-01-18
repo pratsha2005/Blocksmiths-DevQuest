@@ -5,7 +5,7 @@ import {useTranslation} from 'react-i18next'
 import {LanguageDropdown} from './LanguageDropdown'
 import '../services/i18n'
 const navigation = [
-  { name: 'Dashboard', href: 'dashboard', current: true },
+  { name: 'Dashboard', href: '/signInAs', current: true },
   { name: 'About', href: '#about', current: false },
   { name: 'Services', href: '#', current: false },
   { name: 'Contact', href: '#', current: false },
@@ -35,7 +35,7 @@ export default function Navbar() {
             <a href="/"> <img
                 alt="health suraksha"
                 src="https://media.istockphoto.com/id/1191123358/vector/herbal-medicine-concept.jpg?s=612x612&w=0&k=20&c=eIze2uz2AQ7AkhQwZTajshpc5od-1cQoFBRTlgCtoww="
-                className="h-8 w-auto"
+                className="w-auto h-12"
               />
               </a>
             </div>

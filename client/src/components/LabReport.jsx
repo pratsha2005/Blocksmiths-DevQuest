@@ -91,6 +91,21 @@ const LabReport = () => {
           />
         </div>
 
+        {/* Notes */}
+        <div>
+          <label htmlFor="notes" className="block font-medium mb-2">
+            Notes
+          </label>
+          <textarea
+            id="notes"
+            name="notes"
+            value={formData.notes}
+            onChange={handleChange}
+            className="w-full p-2 border rounded-md focus:ring focus:ring-blue-200"
+            rows="3"
+          />
+        </div>
+
         {/* Attachment */}
         <div>
           <label htmlFor="attachment" className="block font-medium mb-2">
