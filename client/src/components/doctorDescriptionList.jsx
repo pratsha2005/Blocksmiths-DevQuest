@@ -1,7 +1,8 @@
 import { PaperClipIcon } from '@heroicons/react/20/solid';
 
 export default function DescriptionList({ patient, record,idx }) {
-  console.log("record",record)
+  console.log("record",record.attachments)
+
   return (
     <div>
       {/* Patient Information */}
@@ -87,7 +88,8 @@ export default function DescriptionList({ patient, record,idx }) {
                       </div>
                       <div className="ml-4 flex-shrink-0">
                         <a
-                          href="#"
+                          href={attachment.url}
+                          target='_blank'
                           className="font-medium text-indigo-600 hover:text-indigo-500"
                         >
                           Download
