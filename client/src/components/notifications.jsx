@@ -3,7 +3,6 @@ import NotificationTile from './notificationTile'; // Assuming NotificationTile 
 import { supabase } from '../supabaseClient'; // Ensure you have configured Supabase client correctly
 
 function Notifications() {
-<<<<<<< HEAD
   const [notifications, setNotifications] = useState([]); // State to hold fetched notifications with doctor names
 
   useEffect(() => {
@@ -138,20 +137,6 @@ function Notifications() {
       )}
     </div>
   );
-=======
-    const [user, setUser] = useState(true)
-    return(
-        <>
-            {!user ? (
-                <Card/>
-            ) : (
-                <h1>
-                    No new notifications
-                </h1>
-            )}
-        </>
-    )
->>>>>>> 4d6916c39d83599511cc4b6f8aacff47d6308212
 }
 
 export default Notifications;

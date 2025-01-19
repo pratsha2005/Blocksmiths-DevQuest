@@ -1,83 +1,95 @@
-import { PaperClipIcon } from '@heroicons/react/20/solid'
+import { PaperClipIcon } from '@heroicons/react/20/solid';
 
-export default function DescriptionList({ patient, record }) {
+export default function DescriptionList({ patient, record,idx }) {
+  console.log("record",record)
   return (
     <div>
+      {/* Patient Information */}
       <div className="mt-4 px-4 sm:px-0">
-        <h3 className="text-base/7 font-semibold text-gray-900">Patient Information</h3>
+        <h3 className="text-base font-semibold text-gray-900">Patient Record {idx + 1}</h3>
       </div>
       <div className="mt-6 border-t border-gray-100">
         <dl className="divide-y divide-gray-100">
           <div className="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
-            <dt className="text-sm/6 font-medium text-gray-900">Full name</dt>
-            <dd className="mt-1 text-sm/6 text-gray-700 sm:col-span-2 sm:mt-0">{`${patient.patientInfo.name.firstName} ${patient.patientInfo.name.lastName}`} </dd>
+            <dt className="text-sm font-medium text-gray-900">Full Name</dt>
+            <dd className="mt-1 text-sm text-gray-700 sm:col-span-2 sm:mt-0">{`${patient.firstName} ${patient.lastName}`}</dd>
           </div>
           <div className="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
-            <dt className="text-sm/6 font-medium text-gray-900">Aadhar No.</dt>
-            <dd className="mt-1 text-sm/6 text-gray-700 sm:col-span-2 sm:mt-0">{`${patient.identification.aadhaarNo}`} </dd>
+            <dt className="text-sm font-medium text-gray-900">Aadhar No.</dt>
+            <dd className="mt-1 text-sm text-gray-700 sm:col-span-2 sm:mt-0">{patient.aadhaarNo}</dd>
           </div>
           <div className="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
-            <dt className="text-sm/6 font-medium text-gray-900">Gender</dt>
-            <dd className="mt-1 text-sm/6 text-gray-700 sm:col-span-2 sm:mt-0">{patient.patientInfo.gender} </dd>
+            <dt className="text-sm font-medium text-gray-900">Email Address</dt>
+            <dd className="mt-1 text-sm text-gray-700 sm:col-span-2 sm:mt-0">{patient.email}</dd>
           </div>
           <div className="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
-            <dt className="text-sm/6 font-medium text-gray-900">Email address</dt>
-            <dd className="mt-1 text-sm/6 text-gray-700 sm:col-span-2 sm:mt-0">{patient.contact.email}</dd>
+            <dt className="text-sm font-medium text-gray-900">Date</dt>
+            <dd className="mt-1 text-sm text-gray-700 sm:col-span-2 sm:mt-0">{record.date}</dd>
           </div>
           <div className="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
-            <dt className="text-sm/6 font-medium text-gray-900">DOB</dt>
-            <dd className="mt-1 text-sm/6 text-gray-700 sm:col-span-2 sm:mt-0">{patient.patientInfo.dob} </dd>
+            <dt className="text-sm font-medium text-gray-900">Diagnosis</dt>
+            <dd className="mt-1 text-sm text-gray-700 sm:col-span-2 sm:mt-0">{record.diagnosis}</dd>
           </div>
-          <div className="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
-            <dt className="text-sm/6 font-medium text-gray-900">Date</dt>
-            <dd className="mt-1 text-sm/6 text-gray-700 sm:col-span-2 sm:mt-0">{record.date} </dd>
-          </div>
-          <div className="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
-            <dt className="text-sm/6 font-medium text-gray-900">Diagnosis</dt>
-            <dd className="mt-1 text-sm/6 text-gray-700 sm:col-span-2 sm:mt-0">{record.diagnosis} </dd>
-          </div>
-          
-          <div className="mt-4 px-4 sm:px-0">
-            <h3 className="text-base/7 font-semibold text-gray-900">Treatment</h3>
-          </div>
+        </dl>
+      </div>
 
-          {/* Iterate through treatment array */}
+      {/* Treatment Information */}
+      <div className="mt-4 px-4 sm:px-0">
+        <h3 className="text-base font-semibold text-gray-900">Treatment</h3>
+      </div>
+      <div className="mt-6 border-t border-gray-100">
+        <dl className="divide-y divide-gray-100">
           {record.treatment && record.treatment.length > 0 ? (
             record.treatment.map((item, index) => (
               <div key={index} className="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
-                <dt className="text-sm/6 font-medium text-gray-900">Medication & Dosage</dt>
-                <dd className="mt-1 text-sm/6 text-gray-700 sm:col-span-2 sm:mt-0">{`${item.medication} ${item.dosage}`}</dd>
+                <dt className="text-sm font-medium text-gray-900">Medication & Dosage</dt>
+                <dd className="mt-1 text-sm text-gray-700 sm:col-span-2 sm:mt-0">{`${item.medication} ${item.dosage}`}</dd>
               </div>
             ))
           ) : (
             <div className="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
-              <dt className="text-sm/6 font-medium text-gray-900">Treatment</dt>
-              <dd className="mt-1 text-sm/6 text-gray-700 sm:col-span-2 sm:mt-0">No treatment information available</dd>
+              <dt className="text-sm font-medium text-gray-900">Treatment</dt>
+              <dd className="mt-1 text-sm text-gray-700 sm:col-span-2 sm:mt-0">No treatment information available</dd>
             </div>
           )}
-          
-          {/* Display notes */}
-          <div className="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
-            <dt className="text-sm/6 font-medium text-gray-900">Summary</dt>
-            <dd className="mt-1 text-sm/6 text-gray-700 sm:col-span-2 sm:mt-0">{record.notes} </dd>
-          </div>
+        </dl>
+      </div>
 
-          {/* Attachments */}
+      {/* Summary */}
+      <div className="mt-4 px-4 sm:px-0">
+        <h3 className="text-base font-semibold text-gray-900">Summary</h3>
+      </div>
+      <div className="mt-6 border-t border-gray-100">
+        <dl className="divide-y divide-gray-100">
           <div className="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
-            <dt className="text-sm/6 font-medium text-gray-900">Attachments</dt>
+            <dt className="text-sm font-medium text-gray-900">Notes</dt>
+            <dd className="mt-1 text-sm text-gray-700 sm:col-span-2 sm:mt-0">{record.notes}</dd>
+          </div>
+        </dl>
+      </div>
+
+      {/* Attachments */}
+      <div className="mt-4 px-4 sm:px-0">
+        <h3 className="text-base font-semibold text-gray-900">Attachments</h3>
+      </div>
+      <div className="mt-6 border-t border-gray-100">
+        <dl className="divide-y divide-gray-100">
+          <div className="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
+            <dt className="text-sm font-medium text-gray-900">Attachments</dt>
             <dd className="mt-2 text-sm text-gray-900 sm:col-span-2 sm:mt-0">
               <ul role="list" className="divide-y divide-gray-100 rounded-md border border-gray-200">
                 {record.attachments && record.attachments.length > 0 ? (
                   record.attachments.map((attachment, index) => (
-                    <li key={index} className="flex items-center justify-between py-4 pl-4 pr-5 text-sm/6">
+                    <li key={index} className="flex items-center justify-between py-4 pl-4 pr-5 text-sm">
                       <div className="flex w-0 flex-1 items-center">
-                        <PaperClipIcon aria-hidden="true" className="size-5 shrink-0 text-gray-400" />
-                        <div className="ml-4 flex min-w-0 flex-1 gap-2">
-                          <span className="truncate font-medium">{attachment.fileName}</span>
-                        </div>
+                        <PaperClipIcon aria-hidden="true" className="h-5 w-5 text-gray-400" />
+                        <span className="ml-2 truncate">{attachment.fileName}</span>
                       </div>
-                      <div className="ml-4 shrink-0">
-                        <a href="#" className="font-medium text-indigo-600 hover:text-indigo-500">
+                      <div className="ml-4 flex-shrink-0">
+                        <a
+                          href="#"
+                          className="font-medium text-indigo-600 hover:text-indigo-500"
+                        >
                           Download
                         </a>
                       </div>
@@ -92,5 +104,5 @@ export default function DescriptionList({ patient, record }) {
         </dl>
       </div>
     </div>
-  )
+  );
 }

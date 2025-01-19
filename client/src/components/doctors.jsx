@@ -34,7 +34,7 @@ function Doctors() {
             .from('doctors')
             .select('id, firstName, lastName')
             .in('id', doctorIds); // Fetch doctors by IDs
-
+          console.log(doctorDetails)
           if (doctorError) {
             throw doctorError;
           }
